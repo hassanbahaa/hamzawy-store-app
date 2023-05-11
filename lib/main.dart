@@ -5,6 +5,7 @@ import 'package:hamzawy_store/core/localization/translation.dart';
 import 'package:hamzawy_store/view/screen/introduction/language.dart';
 import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';
 
+import 'binding/init_binding.dart';
 import 'core/constant/app_theme.dart';
 import 'core/constant/color.dart';
 import 'core/localization/change_local.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       theme: localeController.appTheme,
       debugShowCheckedModeBanner: false,
       // home: Language(),
-
+      initialBinding: initBinding(),
       // routes: routes,
       getPages: routes,
     );
