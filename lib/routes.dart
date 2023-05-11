@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:hamzawy_store/core/constant/routes_names.dart';
 import 'package:hamzawy_store/core/middleware/middleware.dart';
+import 'package:hamzawy_store/test_view.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/forget_password.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/reset_password.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/verify_code.dart';
@@ -16,7 +17,8 @@ import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';
 
 List<GetPage<dynamic>>? routes = [
 
-  GetPage(name: "/",                            page: () => const Language() , middlewares: [MyMiddleWare()]),
+  // GetPage(name: "/",                            page: () => const Language() , middlewares: [MyMiddleWare()]),
+  GetPage(name: "/",                            page: () => const TestView()),
   GetPage(name: AppRoute.login,                 page: () => const Login()),
   GetPage(name: AppRoute.forgetPassword,        page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verifyCode,            page: () => const ForgetVerifyCode()),
