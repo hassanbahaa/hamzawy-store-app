@@ -15,11 +15,11 @@ class HandlingDataView extends StatelessWidget {
       statusRequest  == StatusRequest.loading?
          Center(child: Lottie.asset(AppImageAsset.loading)):
           statusRequest  == StatusRequest.offlineFailure?
-            const Center(child: Text("!! No internet connection available !! ",style: TextStyle(fontSize: 20),)):
+             Center(child: Lottie.asset(AppImageAsset.offline)):
               statusRequest  == StatusRequest.serverFailure?
-                const Center(child: Text("!! Server failure !!",style: TextStyle(fontSize: 20),)):
+                 Center(child: Lottie.asset(AppImageAsset.server)):
                   statusRequest  == StatusRequest.failure?
-                    const Center(child: Text("!! No Data !!",style: TextStyle(fontSize: 20),)):
+                     Center(child: Lottie.asset(AppImageAsset.noData)):
                       widget;
   }
 }
