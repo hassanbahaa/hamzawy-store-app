@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hamzawy_store/core/class/statusrequest.dart';
+import 'package:hamzawy_store/core/constant/image_asset.dart';
+import 'package:lottie/lottie.dart';
 
 class HandlingDataView extends StatelessWidget {
   final StatusRequest statusRequest ;
@@ -11,7 +13,7 @@ class HandlingDataView extends StatelessWidget {
     return
 
       statusRequest  == StatusRequest.loading?
-        const Center(child: Text("Loading",style: TextStyle(fontSize: 20),)):
+         Center(child: Lottie.asset(AppImageAsset.loading)):
           statusRequest  == StatusRequest.offlineFailure?
             const Center(child: Text("!! No internet connection available !! ",style: TextStyle(fontSize: 20),)):
               statusRequest  == StatusRequest.serverFailure?

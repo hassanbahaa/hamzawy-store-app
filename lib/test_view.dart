@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hamzawy_store/core/class/handle_data_view.dart';
 import 'package:hamzawy_store/core/class/statusrequest.dart';
+import 'package:hamzawy_store/core/constant/color.dart';
 
 import 'controller/test_controller.dart';
 
@@ -13,7 +14,9 @@ class TestView extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(TestController());
     return Scaffold(
-      appBar: AppBar(title: Text("title"),),
+      appBar: AppBar(title: Text("title"),
+      backgroundColor: AppColor.primaryColor,
+      ),
       body: GetBuilder<TestController>(builder: (controller){
         
         
