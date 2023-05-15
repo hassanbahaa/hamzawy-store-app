@@ -82,41 +82,69 @@ class SignUp extends StatelessWidget {
 
                 ),
                 SizedBox(height:  Dimentions.height20,),
-                // password text field
                 Container(
                   child: TextFieldAuthCustom(
-                    type: TextInputType.visiblePassword,
-                    // myController: ,
-                    label: "Password".tr,
-                    hint: "Type password signup".tr,
-                    icon: Icon(Icons.visibility_off_outlined,size:  Dimentions.height20),
-                    myController: controller.password,
+                    type: TextInputType.emailAddress,
+                    label: "Phone".tr,
+                    hint: "Phone".tr,
+                    icon: Icon(Icons.phone_android,size:  Dimentions.height20),
+                    myController: controller.phone,
                     valed: (val){
-                      return validInput(val!, 5, 50, "password");
+                      return validInput(val!, 5, 100, "phone");
                     },
                   ),
 
 
                 ),
                 SizedBox(height:  Dimentions.height20,),
-                // password confirm field
-                Container(
-                  child: TextFieldAuthCustom(
-                    type: TextInputType.visiblePassword,
-                    password: false,
-                    // myController: ,
-                    label: "Confirm password".tr,
-                    hint: "Confirm password hint".tr,
-                    icon: Icon(Icons.visibility_off_outlined,size:  Dimentions.height20),
-                    myController: controller.rePassword,
-                    valed: (val){
-                      return validInput(val!, 5, 50, "re-password",pass: controller.password.text);
+                // password text field
+                GetBuilder<SignUpControllerImp>(
+                  builder: (controller){
+                   return Container(
+                      child: TextFieldAuthCustom(
+                        type: TextInputType.visiblePassword,
+                        password: controller.hidePassword,
+                        onTapIcon: (){
+                          controller.showPassword();
+                        },
+                        // myController: ,
+                        label: "Password".tr,
+                        hint: "Type password signup".tr,
+                        icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
+                        myController: controller.password,
+                        valed: (val){
+                          return validInput(val!, 5, 50, "password");
+                        },
+                      ),
 
-                    },
-                  ),
 
-
+                    );
+                  },
                 ),
+                SizedBox(height:  Dimentions.height20,),
+                // password confirm field
+                GetBuilder<SignUpControllerImp>(builder: (controller){
+                  return Container(
+                    child: TextFieldAuthCustom(
+                      type: TextInputType.visiblePassword,
+                      password: controller.hideRepassword,
+                      onTapIcon: (){
+                        controller.showRepassword();
+                      },
+                      // myController: ,
+                      label: "Confirm password".tr,
+                      hint: "Confirm password hint".tr,
+                      icon: Icon(controller.hideRepassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
+                      myController: controller.rePassword,
+                      valed: (val){
+                        return validInput(val!, 5, 50, "re-password",pass: controller.password.text);
+
+                      },
+                    ),
+
+
+                  );
+                }),
                 SizedBox(height:  Dimentions.height20,),
                 // sign up button
                 Container(

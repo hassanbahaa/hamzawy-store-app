@@ -5,7 +5,8 @@ class MyTranslation extends Translations{
   Map<String,Map<String,String>> get keys => {
     "ar": {
       // Auth
-
+      //  auth error message
+      "alreadyhave":"لديك حساب بالفعل بهذا البريد الإلكتروني أو الهاتف ، قم بتسجيل الدخول",
       // email fields
       "Email":"البريد الإلكتروني",
       "Email Address":" قم بإدخال البريد الإلكتروني",
@@ -99,7 +100,7 @@ class MyTranslation extends Translations{
     },
     "en":{
       // Auth
-
+      "alreadyhave":"you already had an account with this email or phone, sign in",
           // email fields
             "Email":"Email",
             "Email Address":"Enter your Email Address",

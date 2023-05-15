@@ -17,8 +17,8 @@ import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';
 
 List<GetPage<dynamic>>? routes = [
 
-  // GetPage(name: "/",                            page: () => const Language() , middlewares: [MyMiddleWare()]),
-  GetPage(name: "/",                            page: () => const TestView()),
+  GetPage(name: "/",                            page: () => const Language() , middlewares: [MyMiddleWare()]),
+  // GetPage(name: "/",                            page: () => const TestView()),
   GetPage(name: AppRoute.login,                 page: () => const Login()),
   GetPage(name: AppRoute.forgetPassword,        page: () => const ForgetPassword()),
   GetPage(name: AppRoute.verifyCode,            page: () => const ForgetVerifyCode()),
