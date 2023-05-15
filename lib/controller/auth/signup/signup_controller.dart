@@ -47,7 +47,7 @@ class SignUpControllerImp extends SignUpController{
       statusRequest = handlingData(response);
       if(StatusRequest.success == statusRequest){
         if ( response['status'] == "sign up success"){
-          data.add(response['data']);
+          // data.add(response['data']);
           print("Valid inputs");
           Get.offNamed(AppRoute.signUpCheckCode);
         }else if( response['status'] == "you already had an account with this email or phone, sign in" ) {
