@@ -32,8 +32,7 @@ class SignUpControllerImp extends SignUpController{
 
 
 
-  late StatusRequest statusRequest ;
-
+  StatusRequest statusRequest = StatusRequest.init ;
 
   @override
   signUp() async {
@@ -42,22 +41,29 @@ class SignUpControllerImp extends SignUpController{
 
 
       statusRequest = StatusRequest.loading;
+      update();
 
       var response = await signUpData.postData(name.text, email.text, password.text, phone.text);
       statusRequest = handlingData(response);
+      print("status request is ## $statusRequest ## ");
+      print("message is ${response}");
       if(StatusRequest.success == statusRequest){
         if ( response['status'] == "sign up success"){
           // data.add(response['data']);
           print("Valid inputs");
-          Get.offNamed(AppRoute.signUpCheckCode);
-        }else if( response['status'] == "you already had an account with this email or phone, sign in" ) {
+          Get.offNamed(AppRoute.signUpCheckCode,arguments: {
+            "email":email.text
+          });
+          // line below to clear the input fields
+          // Get.delete<SignUpControllerImp>();
+        }else if( response['status'] == "already used" ) {
           Get.defaultDialog(title: "error",middleText: "alreadyhave".tr);
           statusRequest = StatusRequest.failure;
         }
       }
       update();
       // line below to clear the input fields
-      Get.delete<SignUpControllerImp>();
+      // Get.delete<SignUpControllerImp>();
     }else{
       print("Not Valid inputs");
     }

@@ -10,13 +10,15 @@ class Crud {
     try{
       if( await checkInternet() ){
         var response = await http.post(Uri.parse(linkUrl),body: data);
+        print("from crud file .. status code is ${response.statusCode} and ${response.body}");
         // if there is an internet connection
-        if( response.statusCode == 200 ){
+        if( response.statusCode == 200 || response.statusCode == 201 ){
           Map responseBody = jsonDecode(response.body);
           // return result body
           return Right(responseBody);
         }else{
           // if there is a problem in connection check so return server fail
+          print("from crud file .. status code is ${response.statusCode}");
           return const Left(StatusRequest.serverFailure);
         }
 
@@ -25,7 +27,7 @@ class Crud {
         return const Left(StatusRequest.offlineFailure);
       }
     }catch(r){
-      print("catch error  $r");
+      print("catch error crud file ..  $r");
       return const Left(StatusRequest.serverFailure);
     }
   }

@@ -1,4 +1,5 @@
 enum StatusRequest{
+  init,
   loading,
   success,
   failure,

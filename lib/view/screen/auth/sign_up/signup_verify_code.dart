@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/auth/signup/signup_controller.dart';
+import 'package:hamzawy_store/core/class/statusrequest.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
 import 'package:hamzawy_store/core/constant/dimentions.dart';
 import 'package:hamzawy_store/view/widget/auth/logo_auth.dart';
+import 'package:lottie/lottie.dart';
 import '../../../../controller/auth/signup/signup_verify_code_controller.dart';
+import '../../../../core/constant/image_asset.dart';
 import '../../../widget/auth/custom_button.dart';
 
 class SignUpVerifyCode extends StatelessWidget {
@@ -23,68 +26,86 @@ class SignUpVerifyCode extends StatelessWidget {
           style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.grey),
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
-        padding: EdgeInsets.all( Dimentions.height10),
-        child: ListView(
-          children: [
-            // header
-            Text(
-              "check code".tr,
-              style: Theme.of(context).textTheme.headline2,
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height:  Dimentions.height10,),
-            // body
-            Text(
-              "verify code body".tr,
-              style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height:  Dimentions.height20,),
+      body: GetBuilder<SignUpVerifyCodeControllerImp>(builder: (controller)  =>
 
-            Container(
-              height:  Dimentions.height80,
-              // color: Colors.red,
-
-              child: OtpTextField(
-                numberOfFields: 5,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                fieldWidth:  Dimentions.height50,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                borderRadius: BorderRadius.circular(15),
-                borderColor: AppColor.primaryColor,
-                focusedBorderColor: AppColor.primaryColor,
-                //set to true to show as box or false to show as dash
-                showFieldAsBox: true,
-                //runs when a code is typed in
-                onCodeChanged: (String code) {
-                  //handle validation or checks here
-                },
-                //runs when every textfield is filled
-                onSubmit: (String verificationCode){
-                    controller.goToSuccess();
-
-                }, // end onSubmit
+        Container(
+          margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
+          padding: EdgeInsets.all( Dimentions.height10),
+          child: ListView(
+            children: [
+              // header
+              Text(
+                "check code".tr,
+                style: Theme.of(context).textTheme.headline2,
+                textAlign: TextAlign.center,
               ),
-
-
-            ),
-            SizedBox(height:  Dimentions.height20,),
-
-            // sign up button
-            Container(
-              child: AuthCustomButton(
-                text: "check".tr,
-                onPressed: (){print('check');},
+              SizedBox(height:  Dimentions.height10,),
+              // body
+              Text(
+                "verify code body".tr,
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                textAlign: TextAlign.center,
               ),
-            ),
-            SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimentions.height20,),
+
+              Container(
+                height:  Dimentions.height80,
+                // color: Colors.red,
+
+                child: OtpTextField(
+                  numberOfFields: 5,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  fieldWidth:  Dimentions.height50,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  borderRadius: BorderRadius.circular(15),
+                  borderColor: AppColor.primaryColor,
+                  focusedBorderColor: AppColor.primaryColor,
+                  //set to true to show as box or false to show as dash
+                  showFieldAsBox: true,
+                  //runs when a code is typed in
+                  onCodeChanged: (String code) {
+                    //handle validation or checks here
+                  },
+                  //runs when every textfield is filled
+                  onSubmit: (String verifycode){
+                    controller.goToSuccess(verifycode);
+
+
+                  }, // end onSubmit
+                  autoFocus: true,
+                ),
+
+
+              ),
+              SizedBox(height:  Dimentions.height20,),
+              controller.statusRequest == StatusRequest.loading ?
+              Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
+                  : SizedBox(height: 5,),
+
+              controller.wrongcode ? Center(child: Text("wrong code, please try again",style: TextStyle(color: Colors.red),)): SizedBox(height: 1,),
+              // sign up button
+              Container(
+                child: AuthCustomButton(
+                  text: "check".tr,
+                  onPressed: (){
+                    print('check , ${controller.wrongcode}');
+                    controller.wrongcode = false;
+
+
+                    },
+                ),
+              ),
+              SizedBox(height:  Dimentions.height20,),
 
 
 
-          ],
-        ),
+            ],
+          ),
+        )
+
+
+
+
       ),
       backgroundColor: AppColor.backgroundColor,
     );
