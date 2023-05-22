@@ -42,6 +42,7 @@ class MyTranslation extends Translations{
       "Sign in message":"قم بتسجيل الدخول بإستخدام البريد الإلكتروني و كلمة المرور او استخدام  حسابات منصات التواصل الاجتماعي",
       "Sign In":"تسجيل الدخول",
       "don't have an account":"ليس لديك حساب؟",
+      "incorrect email":"البريد الإلكتروني أو كلمة المرور غير صحيحة. حاول مرة اخرى",
       //////////////////////////////////////////////////
       // Sign up
       "Choose language":"اختر اللغة",
@@ -139,6 +140,7 @@ class MyTranslation extends Translations{
             "Sign in message":"Sign in with your email & password or continue with social media accounts",
             "Sign In":"Sign In",
             "don't have an account":"Don't have an account?",
+      "incorrect email":"incorrect email or password. please try again",
           //////////////////////////////////////////////////
           // Sign up
             "Create account":"Create account",
