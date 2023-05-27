@@ -34,7 +34,7 @@ class MyTranslation extends Translations{
       "verify code body":"أدخل رمز التحقق الذي أرسلناه لك عبر بريدك الإلكتروني",
       "verify email":"التحقق من البريد الإلكتروني",
       "check code":"التحقق من الرمز",
-
+      "not have email":"عنوان البريد الإلكتروني الذي أدخلته غير متصل بأي حساب ، حاول مرة أخرى",
       //////////////////////////////////////////////////
       // sign in
       "Sign in":"تسجيل الدخول",
@@ -141,6 +141,7 @@ class MyTranslation extends Translations{
             "Sign In":"Sign In",
             "don't have an account":"Don't have an account?",
       "incorrect email":"incorrect email or password. please try again",
+      "not have email":"The email address you entered isn't connected to an account, try again",
           //////////////////////////////////////////////////
           // Sign up
             "Create account":"Create account",

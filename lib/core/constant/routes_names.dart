@@ -8,7 +8,7 @@ class AppRoute{
   static const String successSignup               = '/successsignup' ;
   // Forget Password
   static const String forgetPassword              = '/forgetpassword' ;
-  static const String verifyCode                  = '/verifycode' ;
+  static const String forgetVerifyCode            = '/verifycode' ;
   static const String resetPassword               = '/resetpassword' ;
   static const String successReset                = '/successreset' ;
   // OnBoarding

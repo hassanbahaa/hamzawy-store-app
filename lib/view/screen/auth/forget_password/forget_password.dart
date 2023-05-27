@@ -7,6 +7,7 @@ import 'package:hamzawy_store/core/constant/routes_names.dart';
 import 'package:hamzawy_store/view/widget/auth/logo_auth.dart';
 
 import '../../../../controller/auth/forget_password/forget_password_controller.dart';
+import '../../../../core/class/statusrequest.dart';
 import '../../../../core/functions/valid_input.dart';
 import '../../../widget/auth/custom_button.dart';
 import '../../../widget/auth/custom_textfield.dart';
@@ -27,61 +28,65 @@ class ForgetPassword extends StatelessWidget {
           style: Theme.of(context).textTheme.headline1!.copyWith(color: Colors.grey),
         ),
       ),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
-        padding: EdgeInsets.all( Dimentions.height10),
-        child: Form(
-          key: controller.forgetFormState,
-          child: ListView(
-            children: [
-              // header
-              Text(
-                "check email".tr,
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
+      body: GetBuilder<ForgetPasswordControllerImp>(builder: (controller) =>
+          Container(
+            margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
+            padding: EdgeInsets.all( Dimentions.height10),
+            child: Form(
+              key: controller.forgetFormState,
+              child: ListView(
+                children: [
+                  // header
+                  Text(
+                    "check email".tr,
+                    style: Theme.of(context).textTheme.headline2,
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height:  Dimentions.height10,),
+                  // body
+                  Text(
+                    "Forget Password message".tr,
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height:  Dimentions.height20,),
+
+                  Container(
+                    child: TextFieldAuthCustom(
+                      type: TextInputType.emailAddress,
+                      label: "Email".tr,
+                      hint: "Email Address".tr,
+                      icon: Icon(Icons.email_outlined,size:  Dimentions.height20),
+                      myController: controller.email,
+                      valed: (val){
+                        return validInput(val!, 5, 80, "email");
+                      },
+                    ),
+
+
+                  ),
+                  SizedBox(height:  Dimentions.height20,),
+                  controller.statusRequest == StatusRequest.loading ?
+                  Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
+                      : SizedBox(height: 1,),
+                  // sign up button
+                  Container(
+                    child: AuthCustomButton(
+                      text: "check".tr,
+                      onPressed: (){
+                        controller.checkEmail();
+                        print('check');
+                      },
+                    ),
+                  ),
+                  SizedBox(height:  Dimentions.height20,),
+
+
+
+                ],
               ),
-              SizedBox(height:  Dimentions.height10,),
-              // body
-              Text(
-                "Forget Password message".tr,
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height:  Dimentions.height20,),
-
-              Container(
-                child: TextFieldAuthCustom(
-                  type: TextInputType.emailAddress,
-                  label: "Email".tr,
-                  hint: "Email Address".tr,
-                  icon: Icon(Icons.email_outlined,size:  Dimentions.height20),
-                  myController: controller.email,
-                  valed: (val){
-                    return validInput(val!, 5, 80, "email");
-                  },
-                ),
-
-
-              ),
-              SizedBox(height:  Dimentions.height20,),
-
-              // sign up button
-              Container(
-                child: AuthCustomButton(
-                  text: "check".tr,
-                  onPressed: (){
-                    controller.checkEmail();
-                    print('check');
-                    },
-                ),
-              ),
-              SizedBox(height:  Dimentions.height20,),
-
-
-
-            ],
-          ),
-        ),
+            ),
+          )
       ),
       backgroundColor: AppColor.backgroundColor,
     );

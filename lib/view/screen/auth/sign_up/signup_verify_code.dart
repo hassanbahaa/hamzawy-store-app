@@ -80,7 +80,7 @@ class SignUpVerifyCode extends StatelessWidget {
               SizedBox(height:  Dimentions.height20,),
               controller.statusRequest == StatusRequest.loading ?
               Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
-                  : SizedBox(height: 5,),
+                  : SizedBox(height: 1,),
 
               controller.wrongcode ? Center(child: Text("wrong code, please try again",style: TextStyle(color: Colors.red),)): SizedBox(height: 1,),
               // sign up button
