@@ -15,6 +15,7 @@ import 'routes.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+
   runApp(const MyApp());
 }
 
