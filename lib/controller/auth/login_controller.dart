@@ -50,6 +50,14 @@ class LoginControllerImp extends LoginController{
         if ( response['status'] == "Sign in successfully"){
           // data.add(response['data']);
           print("Valid inputs for login");
+          Get.snackbar(
+            'Login',
+            'Login successful!',
+            duration: Duration(milliseconds: 500),
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.grey,
+            colorText: Colors.white,
+          );
           Get.offNamed(AppRoute.home);
 
         }else if( response['status'] == "Sign in failed" ) {

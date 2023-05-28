@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725510782100",
+    "project_id": "hamzawy-aefb8",
+    "storage_bucket": "hamzawy-aefb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725510782100:android:e7c77b84d254bd81078881",
+        "android_client_info": {
+          "package_name": "com.hassan.hamzawy_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPTBX9E8YYgxs1IQgWD6UGBxemasypDT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -51,7 +51,7 @@ class Login extends StatelessWidget {
                     SizedBox(height:  Dimentions.height10,),
                     Text(
                       "Sign in message".tr,
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize:  Dimentions.fontSize12),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height:  Dimentions.height20,),

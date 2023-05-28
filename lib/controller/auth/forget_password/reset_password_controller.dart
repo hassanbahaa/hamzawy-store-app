@@ -11,6 +11,8 @@ import '../../../core/functions/handling_data.dart';
 abstract class ResetPasswordController extends GetxController{
   resetPassword();
   goToSuccessReset();
+  showPassword();
+  showRePassword();
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController{
@@ -20,6 +22,8 @@ class ResetPasswordControllerImp extends ResetPasswordController{
   GlobalKey<FormState> resetFormState = GlobalKey<FormState>();
   ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
   String? email;
+  bool hidePassword = true;
+  bool hideRePassword = true;
 
   @override
   resetPassword() async{
@@ -81,6 +85,18 @@ class ResetPasswordControllerImp extends ResetPasswordController{
     super.dispose();
   }
 
+
+  @override
+  showPassword() {
+    hidePassword = !hidePassword;
+    update();
+  }
+
+  @override
+  showRePassword() {
+    hideRePassword = !hideRePassword;
+    update();
+  }
 
 
 

@@ -50,7 +50,7 @@ class ResetPassword extends StatelessWidget {
                   type: TextInputType.visiblePassword,
                   label: "Password".tr,
                   hint: "Type new password".tr,
-                  icon: Icon(Icons.visibility_off_outlined,size:  Dimentions.height20),
+                  icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
                   myController: controller.newPassword,
                   valed: (val){
                     return validInput(val!, 5, 80, "password");
@@ -66,7 +66,7 @@ class ResetPassword extends StatelessWidget {
                   type: TextInputType.visiblePassword,
                   label: "Confirm password".tr,
                   hint: "Confirm password hint".tr,
-                  icon: Icon(Icons.visibility_off_outlined,size:  Dimentions.height20),
+                  icon: Icon(controller.hideRePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
                   myController: controller.rePassword,
                   valed: (val){
                     return validInput(val!, 5, 80, "re-password",pass: controller.newPassword.text);
