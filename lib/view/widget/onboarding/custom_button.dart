@@ -11,10 +11,10 @@ class OnBoardingCustomButton extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:  EdgeInsets.only(bottom:  Dimentions.height40),
-      height:  Dimentions.height40,
+      margin:  EdgeInsets.only(bottom:  Dimensions.height40),
+      height:  Dimensions.height40,
       child: MaterialButton(
-        padding: EdgeInsets.symmetric(horizontal:  Dimentions.height100,vertical: 2),
+        padding: EdgeInsets.symmetric(horizontal:  Dimensions.height100,vertical: 2),
         color: AppColor.primaryColor,
         textColor: Colors.white,
         onPressed: (){

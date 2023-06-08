@@ -14,14 +14,14 @@ class AuthCustomButton extends StatelessWidget {
       onPressed: onPressed,
       color: AppColor.primaryColor,
       textColor: Colors.white,
-      padding: EdgeInsets.symmetric(vertical:  Dimentions.height5),
+      padding: EdgeInsets.symmetric(vertical:  Dimensions.height5),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20)
       ),
       child: Text(
           text,
         style: TextStyle(
-            fontSize:  Dimentions.fontSize16
+            fontSize:  Dimensions.fontSize20
         ),
       ),
     );

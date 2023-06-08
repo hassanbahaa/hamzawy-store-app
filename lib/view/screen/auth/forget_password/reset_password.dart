@@ -24,8 +24,8 @@ class ResetPassword extends StatelessWidget {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
-        padding: EdgeInsets.all( Dimentions.height10),
+        margin: EdgeInsets.symmetric(horizontal:  Dimensions.height40),
+        padding: EdgeInsets.all( Dimensions.height10),
         child: Form(
           key: controller.resetFormState,
           child: ListView(
@@ -36,21 +36,21 @@ class ResetPassword extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height:  Dimentions.height10,),
+              SizedBox(height:  Dimensions.height10,),
               // body
               Text(
                 "reset password body".tr,
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimensions.fontSize12),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
 
               Container(
                 child: TextFieldAuthCustom(
                   type: TextInputType.visiblePassword,
                   label: "Password".tr,
                   hint: "Type new password".tr,
-                  icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
+                  icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimensions.height20),
                   myController: controller.newPassword,
                   valed: (val){
                     return validInput(val!, 5, 80, "password");
@@ -59,14 +59,14 @@ class ResetPassword extends StatelessWidget {
 
 
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
 
               Container(
                 child: TextFieldAuthCustom(
                   type: TextInputType.visiblePassword,
                   label: "Confirm password".tr,
                   hint: "Confirm password hint".tr,
-                  icon: Icon(controller.hideRePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
+                  icon: Icon(controller.hideRePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimensions.height20),
                   myController: controller.rePassword,
                   valed: (val){
                     return validInput(val!, 5, 80, "re-password",pass: controller.newPassword.text);
@@ -75,7 +75,7 @@ class ResetPassword extends StatelessWidget {
 
 
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
               // sign up button
               Container(
                 child: AuthCustomButton(
@@ -85,7 +85,7 @@ class ResetPassword extends StatelessWidget {
                     },
                 ),
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
 
 
 

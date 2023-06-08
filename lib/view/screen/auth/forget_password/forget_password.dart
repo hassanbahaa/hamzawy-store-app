@@ -30,8 +30,8 @@ class ForgetPassword extends StatelessWidget {
       ),
       body: GetBuilder<ForgetPasswordControllerImp>(builder: (controller) =>
           Container(
-            margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
-            padding: EdgeInsets.all( Dimentions.height10),
+            margin: EdgeInsets.symmetric(horizontal:  Dimensions.height40),
+            padding: EdgeInsets.all( Dimensions.height10),
             child: Form(
               key: controller.forgetFormState,
               child: ListView(
@@ -42,21 +42,21 @@ class ForgetPassword extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline2,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height:  Dimentions.height10,),
+                  SizedBox(height:  Dimensions.height10,),
                   // body
                   Text(
                     "Forget Password message".tr,
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimensions.fontSize12),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height:  Dimentions.height20,),
+                  SizedBox(height:  Dimensions.height20,),
 
                   Container(
                     child: TextFieldAuthCustom(
                       type: TextInputType.emailAddress,
                       label: "Email".tr,
                       hint: "Email Address".tr,
-                      icon: Icon(Icons.email_outlined,size:  Dimentions.height20),
+                      icon: Icon(Icons.email_outlined,size:  Dimensions.height20),
                       myController: controller.email,
                       valed: (val){
                         return validInput(val!, 5, 80, "email");
@@ -65,7 +65,7 @@ class ForgetPassword extends StatelessWidget {
 
 
                   ),
-                  SizedBox(height:  Dimentions.height20,),
+                  SizedBox(height:  Dimensions.height20,),
                   controller.statusRequest == StatusRequest.loading ?
                   Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
                       : SizedBox(height: 1,),
@@ -79,7 +79,7 @@ class ForgetPassword extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height:  Dimentions.height20,),
+                  SizedBox(height:  Dimensions.height20,),
 
 
 

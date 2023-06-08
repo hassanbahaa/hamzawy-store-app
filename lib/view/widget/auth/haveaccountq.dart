@@ -24,7 +24,7 @@ class HaveAccountQ extends StatelessWidget {
 
           style: Theme.of(context).textTheme.bodyText1,
         ),
-        SizedBox(width:  Dimentions.height5,),
+        SizedBox(width:  Dimensions.height5,),
         InkWell(
           onTap: onTap,
           child: Text(

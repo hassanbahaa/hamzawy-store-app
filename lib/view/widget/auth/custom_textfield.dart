@@ -40,17 +40,17 @@ class TextFieldAuthCustom extends GetView<LocaleController> {
       decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding: sharedLang == 'en'
-              ? EdgeInsets.only(top:  Dimentions.height5, bottom:  Dimentions.height5, left:  Dimentions.height25, right: 0)
-              : EdgeInsets.only(top:  Dimentions.height5, bottom:  Dimentions.height5, left: 0, right:  Dimentions.height25),
+              ? EdgeInsets.only(top:  Dimensions.height5, bottom:  Dimensions.height5, left:  Dimensions.height25, right: 0)
+              : EdgeInsets.only(top:  Dimensions.height5, bottom:  Dimensions.height5, left: 0, right:  Dimensions.height25),
           hintText: hint,
-          hintStyle: TextStyle(fontSize:  Dimentions.fontSize12),
-          label: Text(label),
+          hintStyle: TextStyle(fontSize:  Dimensions.fontSize18),
+          label: Text(label,style: TextStyle(fontSize: Dimensions.fontSize20),),
           // suffixIcon: password == null || false ? icon : InkWell(child: icon,onTap: onTapIcon,),
           suffixIcon: InkWell(onTap: onTapIcon,child: icon,),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
           )),
-      style: TextStyle(fontSize:  Dimentions.fontSize16),
+      style: TextStyle(fontSize:  Dimensions.fontSize20),
     );
   }
 }

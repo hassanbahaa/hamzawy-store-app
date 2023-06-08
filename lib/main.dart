@@ -15,6 +15,12 @@ import 'routes.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness:Brightness.dark
+    ),
+  );
 
   runApp(const MyApp());
 }
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    LocaleController localeController =  Get.put(LocaleController());
+    LocaleController localeController = Get.put(LocaleController());
     return GetMaterialApp(
       title: 'Hamzawy Store',
       locale: localeController.language,

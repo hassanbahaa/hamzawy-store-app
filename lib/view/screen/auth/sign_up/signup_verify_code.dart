@@ -29,8 +29,8 @@ class SignUpVerifyCode extends StatelessWidget {
       body: GetBuilder<SignUpVerifyCodeControllerImp>(builder: (controller)  =>
 
         Container(
-          margin: EdgeInsets.symmetric(horizontal:  Dimentions.height40),
-          padding: EdgeInsets.all( Dimentions.height10),
+          margin: EdgeInsets.symmetric(horizontal:  Dimensions.height40),
+          padding: EdgeInsets.all( Dimensions.height10),
           child: ListView(
             children: [
               // header
@@ -39,23 +39,23 @@ class SignUpVerifyCode extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline2,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height:  Dimentions.height10,),
+              SizedBox(height:  Dimensions.height10,),
               // body
               Text(
                 "verify code body".tr,
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimentions.fontSize12),
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize:  Dimensions.fontSize12),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
 
               Container(
-                height:  Dimentions.height80,
+                height:  Dimensions.height80,
                 // color: Colors.red,
 
                 child: OtpTextField(
                   numberOfFields: 5,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  fieldWidth:  Dimentions.height50,
+                  fieldWidth:  Dimensions.height50,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   borderRadius: BorderRadius.circular(15),
                   borderColor: AppColor.primaryColor,
@@ -77,7 +77,7 @@ class SignUpVerifyCode extends StatelessWidget {
 
 
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
               controller.statusRequest == StatusRequest.loading ?
               Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
                   : SizedBox(height: 1,),
@@ -95,7 +95,7 @@ class SignUpVerifyCode extends StatelessWidget {
                     },
                 ),
               ),
-              SizedBox(height:  Dimentions.height20,),
+              SizedBox(height:  Dimensions.height20,),
 
 
 

@@ -23,7 +23,7 @@ class Language extends GetView<LocaleController> {
                Text(
                   "Choose language".tr,
                 style:  TextStyle(
-                  fontSize:  Dimentions.fontSize18,
+                  fontSize:  Dimensions.fontSize18,
                   fontWeight: FontWeight.w500
                 ),
               ),
@@ -35,7 +35,7 @@ class Language extends GetView<LocaleController> {
                 Get.offNamed(AppRoute.onBoarding);
               }),
                SizedBox(
-                height:  Dimentions.height20,
+                height:  Dimensions.height20,
               ),
               LanguageCustomButton(language: 'English', onPressed: () {
                 controller.changeLang("en");

@@ -31,16 +31,16 @@ class OnBoardingCustomSlider extends GetView<OnBoardingControllerImp> {
                 )
               ),
                SizedBox(
-                height:  Dimentions.height50,
+                height:  Dimensions.height50,
               ),
               Image.asset(
                 onBoardingList[index].image!,
-                height:  Dimentions.height225,
-                width:  Dimentions.height200,
+                height:  Dimensions.height225,
+                width:  Dimensions.height200,
                 fit: BoxFit.fill,
               ),
                SizedBox(
-                height:  Dimentions.height50,
+                height:  Dimensions.height50,
               ),
               // body
               Text(

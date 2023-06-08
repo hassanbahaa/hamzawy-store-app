@@ -11,7 +11,7 @@ class LanguageCustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal:  Dimentions.height80),
+      padding: EdgeInsets.symmetric(horizontal:  Dimensions.height80),
       width: double.infinity,
       child: MaterialButton(
         color: AppColor.primaryColor,

@@ -26,7 +26,7 @@ class SuccessSignUp extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: Dimentions.height20,horizontal: Dimentions.height40),
+        padding: EdgeInsets.symmetric(vertical: Dimensions.height20,horizontal: Dimensions.height40),
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -34,17 +34,17 @@ class SuccessSignUp extends StatelessWidget {
           children: [
             Icon(
               Icons.check_circle_outline,
-              size: Dimentions.height200,
+              size: Dimensions.height200,
               color: Colors.green,
             ),
-            SizedBox(height: Dimentions.height20,),
+            SizedBox(height: Dimensions.height20,),
             Text(
                 "signup success message".tr,
                 textAlign: TextAlign.center,
             ),
-            SizedBox(height: Dimentions.height40,),
+            SizedBox(height: Dimensions.height40,),
             Container(
-              width: Dimentions.height200,
+              width: Dimensions.height200,
               child: AuthCustomButton(
                 text: "Go to login".tr.capitalize!,
                 onPressed: (){
@@ -54,7 +54,7 @@ class SuccessSignUp extends StatelessWidget {
                   },
               ),
             ),
-            SizedBox(height: Dimentions.height40,),
+            SizedBox(height: Dimensions.height40,),
 
           ],
         ),

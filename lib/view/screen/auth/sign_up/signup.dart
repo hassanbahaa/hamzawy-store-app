@@ -40,8 +40,8 @@ class SignUp extends StatelessWidget {
             child: Lottie.asset(AppImageAsset.loading),
           ) :
           Container(
-            margin: EdgeInsets.symmetric(horizontal: Dimentions.height40),
-            padding: EdgeInsets.all(Dimentions.height10),
+            margin: EdgeInsets.symmetric(horizontal: Dimensions.height40),
+            padding: EdgeInsets.all(Dimensions.height10),
             child: Form(
               key: controller.SignUpFormState,
               child: ListView(
@@ -53,7 +53,7 @@ class SignUp extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: Dimentions.height10,
+                    height: Dimensions.height10,
                   ),
 // body
                   Text(
@@ -61,11 +61,11 @@ class SignUp extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
-                        .copyWith(fontSize: Dimentions.fontSize12),
+                        .copyWith(fontSize: Dimensions.fontSize12),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 // Full Name field
                   Container(
@@ -75,7 +75,7 @@ class SignUp extends StatelessWidget {
                       label: "Full Name".tr,
                       hint: "Type Full Name".tr,
                       icon: Icon(Icons.person_outline,
-                          size: Dimentions.height20),
+                          size: Dimensions.height20),
                       myController: controller.name,
                       valed: (val) {
                         return validInput(val!, 5, 30, "name");
@@ -83,7 +83,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 
                   Container(
@@ -92,7 +92,7 @@ class SignUp extends StatelessWidget {
                       label: "Email".tr,
                       hint: "Email Address".tr,
                       icon: Icon(Icons.email_outlined,
-                          size: Dimentions.height20),
+                          size: Dimensions.height20),
                       myController: controller.email,
                       valed: (val) {
                         return validInput(val!, 5, 100, "email");
@@ -100,7 +100,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
                   Container(
                     child: TextFieldAuthCustom(
@@ -108,7 +108,7 @@ class SignUp extends StatelessWidget {
                       label: "Phone".tr,
                       hint: "Phone".tr,
                       icon: Icon(Icons.phone_android,
-                          size: Dimentions.height20),
+                          size: Dimensions.height20),
                       myController: controller.phone,
                       valed: (val) {
                         return validInput(val!, 5, 13, "phone");
@@ -116,7 +116,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 // password text field
                   GetBuilder<SignUpControllerImp>(
@@ -135,7 +135,7 @@ class SignUp extends StatelessWidget {
                               controller.hidePassword
                                   ? Icons.visibility_off_outlined
                                   : Icons.visibility_outlined,
-                              size: Dimentions.height20),
+                              size: Dimensions.height20),
                           myController: controller.password,
                           valed: (val) {
                             return validInput(val!, 5, 50, "password");
@@ -145,7 +145,7 @@ class SignUp extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 // password confirm field
                   GetBuilder<SignUpControllerImp>(builder: (controller) {
@@ -163,7 +163,7 @@ class SignUp extends StatelessWidget {
                             controller.hideRepassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
-                            size: Dimentions.height20),
+                            size: Dimensions.height20),
                         myController: controller.rePassword,
                         valed: (val) {
                           return validInput(val!, 5, 50, "re-password",
@@ -173,7 +173,7 @@ class SignUp extends StatelessWidget {
                     );
                   }),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 // sign up button
                   Container(
@@ -186,7 +186,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: Dimentions.height20,
+                    height: Dimensions.height20,
                   ),
 
 // Don't have an account ? sign up

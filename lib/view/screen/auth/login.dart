@@ -36,8 +36,8 @@ class Login extends StatelessWidget {
           WillPopScope(
             onWillPop: exitAlert,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: Dimentions.height40),
-              padding: EdgeInsets.all( Dimentions.height10),
+              margin: EdgeInsets.symmetric(horizontal: Dimensions.height40),
+              padding: EdgeInsets.all( Dimensions.height10),
               child: Form(
                 key: controller.loginFormState,
                 child: ListView(
@@ -45,23 +45,23 @@ class Login extends StatelessWidget {
                     LogoAuth(),
                     Text(
                       "Welcome back".tr,
-                      style: Theme.of(context).textTheme.headline2,
+                      style: Theme.of(context).textTheme.displayMedium,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height:  Dimentions.height10,),
+                    SizedBox(height:  Dimensions.height10,),
                     Text(
                       "Sign in message".tr,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize:  Dimentions.fontSize12),
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize:  Dimensions.fontSize18),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height:  Dimentions.height20,),
+                    SizedBox(height:  Dimensions.height20,),
                     // email text field
                     Container(
                       child: TextFieldAuthCustom(
                         type: TextInputType.emailAddress,
                         label: "Email".tr,
                         hint: "Email Address".tr,
-                        icon: Icon(Icons.email_outlined,size:  Dimentions.height20),
+                        icon: Icon(Icons.email_outlined,size:  Dimensions.height20),
                         myController: controller.email,
                         valed: (val){
                           return validInput(val!, 5, 100, "email");
@@ -70,7 +70,7 @@ class Login extends StatelessWidget {
 
 
                     ),
-                    SizedBox(height:  Dimentions.height20,),
+                    SizedBox(height:  Dimensions.height20,),
                     // password text field
                     GetBuilder<LoginControllerImp>(
                         builder:(controller){
@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
                               // myController: ,
                               label: "Password".tr,
                               hint: "Type password".tr,
-                              icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimentions.height20),
+                              icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimensions.height20),
                               myController: controller.password,
                               valed: (val){
                                 return validInput(val!, 5, 100, "password");
@@ -95,13 +95,13 @@ class Login extends StatelessWidget {
                           );
                         }
                     ),
-                    SizedBox(height:  Dimentions.height10,),
+                    SizedBox(height:  Dimensions.height10,),
                     // forget password
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal:  Dimentions.height5),
+                          padding: EdgeInsets.symmetric(horizontal:  Dimensions.height5),
                           child: InkWell(
                             onTap: (){
                               controller.goToForgetPassword();
@@ -115,7 +115,7 @@ class Login extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height:  Dimentions.height10,),
+                    SizedBox(height:  Dimensions.height10,),
                     controller.statusRequest == StatusRequest.loading ?
                     Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
                         : SizedBox(height: 5,),
@@ -129,7 +129,7 @@ class Login extends StatelessWidget {
                         },
                       ),
                     ),
-                    SizedBox(height:  Dimentions.height20,),
+                    SizedBox(height:  Dimensions.height20,),
                     // Don't have an account ? sign up
                     HaveAccountQ(
                       text: "don't have an account",

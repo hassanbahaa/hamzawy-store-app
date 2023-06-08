@@ -18,10 +18,10 @@ class OnBoardingDotController extends StatelessWidget {
           ...List.generate(
               onBoardingList.length,
                   (index) => AnimatedContainer(
-                margin: EdgeInsets.only(right:  Dimentions.height5),
+                margin: EdgeInsets.only(right:  Dimensions.height5),
                 duration: Duration(milliseconds: 300),
-                width: controller.currentPage == index ?  Dimentions.height20 :  Dimentions.height5,
-                height:  Dimentions.height5,
+                width: controller.currentPage == index ?  Dimensions.height20 :  Dimensions.height5,
+                height:  Dimensions.height5,
                 decoration: BoxDecoration(
                     color: AppColor.primaryColor,
                     borderRadius: BorderRadius.circular(5)
