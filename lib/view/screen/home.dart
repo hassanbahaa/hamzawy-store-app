@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:hamzawy_store/controller/home_controller.dart';
 import 'package:hamzawy_store/core/class/handle_data_view.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
 import 'package:hamzawy_store/core/constant/dimentions.dart';
-import 'package:hamzawy_store/core/functions/handling_data.dart';
-import 'package:hamzawy_store/core/services/services.dart';
 import 'package:hamzawy_store/linkapi.dart';
-
-import '../../data/data_source/remote/home_data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,22 +20,21 @@ class HomeScreen extends StatelessWidget {
       // ),
       body: GetBuilder<HomeControllerImp>(
         builder: (controller) {
-          print(
-              "The device dimentions is ${Dimensions.screenHeight} for height and ${Dimensions.screenWidth} for width");
+          // print("The device dimentions is ${Dimensions.screenHeight} for height and ${Dimensions.screenWidth} for width");
           return HandlingDataView(
               statusRequest: controller.statusRequest,
               widget: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: ListView(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 15),
+                        margin: const EdgeInsets.only(top: 15),
                         child: Row(
                           children: [
                             Expanded(
                                 child: TextFormField(
                               decoration: InputDecoration(
-                                  prefixIcon: Icon(Icons.search),
+                                  prefixIcon: const Icon(Icons.search),
                                   hintText: "Search",
                                   border: OutlineInputBorder(
                                       borderSide: BorderSide.none,
@@ -48,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                                   filled: true,
                                   fillColor: Colors.grey[200]),
                             )),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Container(
@@ -70,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                           // color: AppColor.primaryColor,
                         ),
                         // width: Dimensions.screenWidth-60,
-                        margin: EdgeInsets.symmetric(vertical: 15),
+                        margin: const EdgeInsets.symmetric(vertical: 15),
                         child: Stack(
                           children: [
                             Container(
@@ -112,12 +106,12 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // padding: EdgeInsets.symmetric(horizontal: 15),
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
                         height: Dimensions.height90,
                         // color: Colors.red,
                         child: ListView.separated(
                           separatorBuilder: (context, index) {
-                            return SizedBox(
+                            return const SizedBox(
                               width: 10,
                             );
                           },
@@ -125,10 +119,10 @@ class HomeScreen extends StatelessWidget {
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, int index) {
                             return Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 5),
                                   height: Dimensions.height65,
                                   width: Dimensions.height65,
@@ -136,20 +130,28 @@ class HomeScreen extends StatelessWidget {
                                       color: AppColor.secondaryLightColor,
                                       borderRadius: BorderRadius.circular(10)),
                                   child: SvgPicture.network(
-                                      "${AppLink.imagescategories}/${controller.categories[index]['categories_image']}"),
+                                    "${AppLink.imagescategories}/${controller.categories[index]['categories_image']}",
+                                    width: Dimensions.height65,
+                                    height: Dimensions.height65,
+                                    placeholderBuilder:
+                                        (BuildContext context) => Container(
+                                      width: Dimensions.height65,
+                                      height: Dimensions.height65,
+                                    ),
+                                  ),
                                 ),
                                 Text(
                                   controller.categories[index]
                                       ['categories_name'],
+                                  style: TextStyle(
+                                      fontSize: Dimensions.fontSize12),
                                 )
                               ],
                             );
                           },
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
+                      const SizedBox(height: 15,),
                       Text(
                         "Products for you",
                         style: TextStyle(
@@ -157,7 +159,7 @@ class HomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             color: AppColor.primaryColor),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -170,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Container(
                                     padding:
-                                        EdgeInsets.symmetric(horizontal: 10),
+                                        const EdgeInsets.symmetric(horizontal: 10),
                                     child: Image.asset(
                                       "assets/images/1.png",
                                       height: Dimensions.height100,

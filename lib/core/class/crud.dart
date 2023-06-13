@@ -10,7 +10,10 @@ class Crud {
     try{
       if( await checkInternet() ){
         var response = await http.post(Uri.parse(linkUrl),body: data);
-        print("from crud file .. status code is ${response.statusCode} and ${response.body}");
+        print("from crud file link is $linkUrl..  status code is ${response.statusCode} and   ");
+        print("the response body is ${response.body} ");
+        print("the original request body is ${response.request?.headers} ");
+        print("and also %%%% ${response.headers} &&&&&&&");
         // if there is an internet connection
         if( response.statusCode == 200 || response.statusCode == 201 ){
           Map responseBody = jsonDecode(response.body);
