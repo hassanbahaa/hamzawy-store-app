@@ -21,7 +21,7 @@ class AuthCustomButton extends StatelessWidget {
       child: Text(
           text,
         style: TextStyle(
-            fontSize:  Dimensions.fontSize20
+            fontSize:  Dimensions.fontSize12
         ),
       ),
     );

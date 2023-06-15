@@ -36,8 +36,8 @@ class Login extends StatelessWidget {
           WillPopScope(
             onWillPop: exitAlert,
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: Dimensions.height40),
-              padding: EdgeInsets.all( Dimensions.height10),
+              margin: EdgeInsets.symmetric(horizontal: Dimensions.height10),
+              padding: EdgeInsets.all( Dimensions.height5),
               child: Form(
                 key: controller.loginFormState,
                 child: ListView(
@@ -48,20 +48,20 @@ class Login extends StatelessWidget {
                       style: Theme.of(context).textTheme.displayMedium,
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height:  Dimensions.height10,),
+                    SizedBox(height:  Dimensions.height5,),
                     Text(
                       "Sign in message".tr,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize:  Dimensions.fontSize18),
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize:  Dimensions.fontSize12),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(height:  Dimensions.height20,),
+                    SizedBox(height:  Dimensions.height10,),
                     // email text field
                     Container(
                       child: TextFieldAuthCustom(
                         type: TextInputType.emailAddress,
                         label: "Email".tr,
                         hint: "Email Address".tr,
-                        icon: Icon(Icons.email_outlined,size:  Dimensions.height20),
+                        icon: Icon(Icons.email_outlined,size: Dimensions.fontSize18),
                         myController: controller.email,
                         valed: (val){
                           return validInput(val!, 5, 100, "email");
@@ -70,7 +70,7 @@ class Login extends StatelessWidget {
 
 
                     ),
-                    SizedBox(height:  Dimensions.height20,),
+                    SizedBox(height:  Dimensions.height10,),
                     // password text field
                     GetBuilder<LoginControllerImp>(
                         builder:(controller){
@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
                               // myController: ,
                               label: "Password".tr,
                               hint: "Type password".tr,
-                              icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimensions.height20),
+                              icon: Icon(controller.hidePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,size:  Dimensions.fontSize18),
                               myController: controller.password,
                               valed: (val){
                                 return validInput(val!, 5, 100, "password");
@@ -95,7 +95,7 @@ class Login extends StatelessWidget {
                           );
                         }
                     ),
-                    SizedBox(height:  Dimensions.height10,),
+                    SizedBox(height:  Dimensions.height5,),
                     // forget password
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -115,7 +115,7 @@ class Login extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height:  Dimensions.height10,),
+                    SizedBox(height:  Dimensions.height5,),
                     controller.statusRequest == StatusRequest.loading ?
                     Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
                         : SizedBox(height: 5,),
@@ -129,7 +129,7 @@ class Login extends StatelessWidget {
                         },
                       ),
                     ),
-                    SizedBox(height:  Dimensions.height20,),
+                    SizedBox(height:  Dimensions.height10,),
                     // Don't have an account ? sign up
                     HaveAccountQ(
                       text: "don't have an account",
