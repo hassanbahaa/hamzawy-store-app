@@ -8,6 +8,7 @@ import 'package:hamzawy_store/core/constant/dimentions.dart';
 import 'package:hamzawy_store/linkapi.dart';
 import 'package:hamzawy_store/view/widget/home/customappbar.dart';
 import 'package:hamzawy_store/view/widget/home/customcarthome.dart';
+import 'package:hamzawy_store/view/widget/home/customproductslidehome.dart';
 import 'package:hamzawy_store/view/widget/home/listcategorieshome.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -49,45 +50,7 @@ class HomeScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        height: Dimensions.height200,
-                        child: ListView.builder(
-                            itemCount: controller.items.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, i) {
-                              return Stack(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 10),
-                                    child: Image.network(
-                                      "${AppLink.imagesitems}/${controller.items[i]['items_image']}",
-                                      height: Dimensions.height100,
-                                      width: Dimensions.height150,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                  Container(
-                                    height: Dimensions.height100,
-                                    width: Dimensions.height150,
-                                    decoration: BoxDecoration(
-                                        color: Colors.black.withOpacity(0.3),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                  ),
-                                  Positioned(
-                                      left: 10,
-                                      child: Text(
-                                        "${controller.items[i]["items_name"]}",
-                                        style: TextStyle(
-                                            fontSize: Dimensions.fontSize14,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.white),
-                                      ))
-                                ],
-                              );
-                            }),
-                      )
+                     CustomProductSlide()
                       // Products container
                     ],
                   )));
