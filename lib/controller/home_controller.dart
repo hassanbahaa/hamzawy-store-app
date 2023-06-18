@@ -15,6 +15,7 @@ abstract class HomeController extends GetxController {
   List data = [];
   List categories = [];
   List items = [];
+  List homeCart = [];
 
   StatusRequest statusRequest = StatusRequest.init;
 
@@ -53,6 +54,7 @@ class HomeControllerImp extends HomeController {
       if (response['status'] == "success") {
         categories.addAll(response['categories']);
         items.addAll(response['items']);
+        homeCart.addAll(response['homecart']);
         print("categories items is ${categories.length}");
         print(categories);
         print("the status is success");

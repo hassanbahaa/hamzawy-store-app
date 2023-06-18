@@ -11,7 +11,8 @@ import 'package:hamzawy_store/view/screen/auth/sign_up/signup.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/success_reset.dart';
 import 'package:hamzawy_store/view/screen/auth/sign_up/signup_verify_code.dart';
 import 'package:hamzawy_store/view/screen/auth/sign_up/success_signup.dart';
-import 'package:hamzawy_store/view/screen/home.dart';
+import 'package:hamzawy_store/view/screen/homepage.dart';
+import 'package:hamzawy_store/view/screen/homescreen.dart';
 import 'package:hamzawy_store/view/screen/introduction/language.dart';
 import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';
 
@@ -20,7 +21,7 @@ List<GetPage<dynamic>>? routes = [
 
   GetPage(name: "/",                            page: () => const Language() , middlewares: [MyMiddleWare()]),
   // GetPage(name: "/",                            page: () => const TestView()),
-  GetPage(name: AppRoute.home,                 page: () => const HomeScreen()),
+  GetPage(name: AppRoute.home,                  page: () => const HomeScreen()),
   GetPage(name: AppRoute.login,                 page: () => const Login()),
   GetPage(name: AppRoute.forgetPassword,        page: () => const ForgetPassword()),
   GetPage(name: AppRoute.forgetVerifyCode,            page: () => const ForgetVerifyCode()),

@@ -19,6 +19,16 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
             return Stack(
               children: [
                 Container(
+                  margin: EdgeInsets.only(right: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  height: Dimensions.height100,
+                  width: Dimensions.height150,
+                  decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.2),
+                      borderRadius:
+                      BorderRadius.circular(20)),
+                ),
+                Container(
                   height: Dimensions.height100,
                   width: Dimensions.height150,
                   margin: EdgeInsets.only(right: 10),
@@ -30,16 +40,7 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
                     fit: BoxFit.contain,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  height: Dimensions.height100,
-                  width: Dimensions.height150,
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.2),
-                      borderRadius:
-                      BorderRadius.circular(20)),
-                ),
+
                 Positioned(
                   width: Dimensions.height140,
                     left: 10,

@@ -1,5 +1,8 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/core/localization/translation.dart';
 import 'package:hamzawy_store/view/screen/introduction/language.dart';
@@ -38,6 +41,25 @@ class MyApp extends StatelessWidget {
     ]);
 
     LocaleController localeController = Get.put(LocaleController());
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context,child){
+          return TheApp(localeController: localeController);
+          // return TestScreensView(localeController: localeController);
+        }
+    );
+    // return TestScreensView(localeController: localeController);
+  }
+}
+
+class TheApp extends StatelessWidget {
+  final LocaleController localeController;
+  const TheApp({Key? key, required this.localeController}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Hamzawy Store',
       locale: localeController.language,
@@ -52,3 +74,62 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class TestScreensView extends StatelessWidget {
+  final LocaleController localeController;
+  const TestScreensView({Key? key, required this.localeController}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return DevicePreview(
+
+        enabled: !kReleaseMode,
+        builder: (BuildContext context){
+          return GetMaterialApp(
+            useInheritedMediaQuery: true,
+            builder: DevicePreview.appBuilder,
+            title: 'Hamzawy Store',
+            locale: localeController.language,
+            translations: MyTranslation(),
+            theme: localeController.appTheme,
+            debugShowCheckedModeBanner: false,
+            // home: Language(),
+            initialBinding: initBinding(),
+            // routes: routes,
+            getPages: routes,
+          );
+        }
+    );
+  }
+}
+
+
+/*
+
+// Device Preview Code
+
+
+DevicePreview(
+      enabled: true,
+        builder: (BuildContext context){
+          return GetMaterialApp(
+            builder: DevicePreview.appBuilder,
+            title: 'Hamzawy Store',
+            locale: localeController.language,
+            translations: MyTranslation(),
+            theme: localeController.appTheme,
+            debugShowCheckedModeBanner: false,
+            // home: Language(),
+            initialBinding: initBinding(),
+            // routes: routes,
+            getPages: routes,
+          );
+        }
+    )
+
+
+
+
+
+
+
+* */
