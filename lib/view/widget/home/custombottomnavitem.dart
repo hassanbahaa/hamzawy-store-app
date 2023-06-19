@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
 import 'package:hamzawy_store/core/constant/dimentions.dart';
 
@@ -40,7 +39,7 @@ class CustomNavBarItem extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                fontSize: Dimensions.fontSize12,
+                fontSize: Dimensions.fontSize10,
                 color: active == true ? AppColor.primaryColor : AppColor.gery,
               ),
             )

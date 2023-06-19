@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hamzawy_store/controller/homescreencontroller.dart';
-import 'package:hamzawy_store/core/constant/color.dart';
-
-import '../widget/home/custombottomnavitem.dart';
+import '../widget/home/custombottomnavbarHome.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -19,11 +17,14 @@ class HomeScreen extends StatelessWidget {
           child: Icon(Icons.shopping_basket_outlined),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: BottomAppBar(
-          shape: CircularNotchedRectangle(),
-          notchMargin: 5,
-          child: Row(
-            children: [
+        bottomNavigationBar: const CustomBottomNavBarHome(),
+        body: controller.listPage.elementAt(controller.currentpage),
+      );
+    });
+  }
+}
+
+/*
               Row(
 
                 children: [
@@ -66,11 +67,4 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            ],
-          ),
-        ),
-        body: controller.listPage.elementAt(controller.currentpage),
-      );
-    });
-  }
-}
+ */

@@ -21,11 +21,20 @@ class HomeScreenControllerImp extends HomeScreenController{
     Center(child: Text("Hello page 2"),),
     Center(child: Text("Hello page 3"),),
     Center(child: Text("Hello page 4"),),
-    Center(child: Text("Hello page 5"),),
   ] ;
 
-
-
+  List listnames = [
+    "Home",
+    "Favourite",
+    "Profile",
+    "Settings",
+  ] ;
+  List<IconData> listIcons = [
+    Icons.home,
+    Icons.favorite,
+    Icons.person,
+    Icons.settings,
+  ] ;
 
 
 
@@ -35,6 +44,7 @@ class HomeScreenControllerImp extends HomeScreenController{
 
     currentpage = i;
     update();
+    print("current int is $currentpage");
 
   }
 }
