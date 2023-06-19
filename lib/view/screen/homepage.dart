@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/home_controller.dart';
 import 'package:hamzawy_store/core/class/handle_data_view.dart';
@@ -12,7 +11,7 @@ import 'package:hamzawy_store/view/widget/home/customproductslidehome.dart';
 import 'package:hamzawy_store/view/widget/home/listcategorieshome.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody.HomePage({Key? key}) : super(key: key);
+  const HomeBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class HomeBody extends StatelessWidget {
     return GetBuilder<HomeControllerImp>(
       builder: (controller) {
         // print("The device dimentions is ${Dimensions.screenHeight} for height and ${Dimensions.screenWidth} for width");
-        print("XXXXXXXXXXXXXXX ${controller.homeCart}");
+        // print("XXXXXXXXXXXXXXX ${controller.homeCart}");
         return HandlingDataView(
             statusRequest: controller.statusRequest,
             widget: Container(
@@ -41,7 +40,7 @@ class HomeBody extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: AppColor.primaryColor),
                     ),
-                    ListCategoriesHome(),
+                    const ListCategoriesHome(),
                     const SizedBox(
                       height: 15,
                     ),
@@ -55,7 +54,19 @@ class HomeBody extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    CustomProductSlide()
+                    const CustomProductSlide(),
+
+                    Text(
+                      "Top Sales",
+                      style: TextStyle(
+                          fontSize: Dimensions.fontSize14,
+                          fontWeight: FontWeight.w500,
+                          color: AppColor.primaryColor),
+                    ),
+                    const SizedBox(
+                      height: 10
+                    ),
+                    const CustomProductSlide(),
                     // Products container
                   ],
                 )));

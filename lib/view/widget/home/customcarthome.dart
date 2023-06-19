@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/constant/color.dart';
 import '../../../core/constant/dimentions.dart';
@@ -19,7 +18,7 @@ class CustomCartHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: AppColor.secondaryColor,
@@ -44,7 +43,7 @@ class CustomCartHome extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.white, fontSize: Dimensions.fontSize20),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -59,13 +58,13 @@ class CustomCartHome extends StatelessWidget {
           Container(
             height: Dimensions.width100,
             width: Dimensions.width100,
-            padding: EdgeInsets.all(5),
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
                 // color: AppColor.secondaryColor,
                 color: AppColor.primaryColor,
                 borderRadius: BorderRadius.circular(Dimensions.height60)),
             child: image == null
-                ? Text("")
+                ? const Text("")
                 : ClipRRect(
                     borderRadius: BorderRadius.circular(Dimensions.height60),
                     child: Image.network(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:hamzawy_store/controller/homescreencontroller.dart';
+import 'package:hamzawy_store/core/constant/color.dart';
 import '../widget/home/custombottomnavbarHome.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,8 +13,9 @@ class HomeScreen extends StatelessWidget {
     return GetBuilder<HomeScreenControllerImp>(builder: (controller) {
       return Scaffold(
         floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColor.primaryColor,
           onPressed: () {},
-          child: Icon(Icons.shopping_basket_outlined),
+          child: const Icon(Icons.shopping_basket_outlined),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: const CustomBottomNavBarHome(),
@@ -24,47 +25,4 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-/*
-              Row(
 
-                children: [
-                  CustomNavBarItem(
-                    icon: Icons.home,
-                    text: "Home",
-                    onPressed: () {
-                      controller.changePage(0);
-                    },
-                    active: controller.currentpage == 0 ? true : false,
-                  ),
-                  CustomNavBarItem(
-                    icon: Icons.favorite,
-                    text: "Favorite",
-                    onPressed: () {
-                      controller.changePage(1);
-                    },
-                    active: controller.currentpage == 1 ? true : false,
-                  ),
-                ],
-              ),
-              Spacer(),
-              Row(
-                children: [
-                  CustomNavBarItem(
-                    icon: Icons.person,
-                    text: "Profile",
-                    onPressed: () {
-                      controller.changePage(3);
-                    },
-                    active: controller.currentpage == 3 ? true : false,
-                  ),
-                  CustomNavBarItem(
-                    icon: Icons.settings,
-                    text: "Setting",
-                    onPressed: () {
-                      controller.changePage(4);
-                    },
-                    active: controller.currentpage == 4 ? true : false,
-                  ),
-                ],
-              ),
- */

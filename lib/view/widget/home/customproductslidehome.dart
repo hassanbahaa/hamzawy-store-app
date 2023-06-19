@@ -11,7 +11,7 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
   @override
   Widget build(BuildContext context) {
     return   Container(
-      height: Dimensions.height200,
+      height: Dimensions.height120-10,
       child: ListView.builder(
           itemCount: controller.items.length,
           scrollDirection: Axis.horizontal,

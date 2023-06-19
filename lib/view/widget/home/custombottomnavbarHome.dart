@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controller/homescreencontroller.dart';
 import 'custombottomnavitem.dart';
 
@@ -11,8 +10,8 @@ class CustomBottomNavBarHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeScreenControllerImp>(builder: (controller){
       return BottomAppBar(
-        padding: EdgeInsets.symmetric(vertical: 2.5),
-        shape: CircularNotchedRectangle(),
+        padding: const EdgeInsets.symmetric(vertical: 2.5),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 5,
         child: Row(
           children: [

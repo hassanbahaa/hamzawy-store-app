@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:hamzawy_store/core/constant/routes_names.dart';
 import 'package:hamzawy_store/core/middleware/middleware.dart';
-import 'package:hamzawy_store/test_view.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/forget_password.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/reset_password.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/verify_code.dart';
@@ -11,7 +9,6 @@ import 'package:hamzawy_store/view/screen/auth/sign_up/signup.dart';
 import 'package:hamzawy_store/view/screen/auth/forget_password/success_reset.dart';
 import 'package:hamzawy_store/view/screen/auth/sign_up/signup_verify_code.dart';
 import 'package:hamzawy_store/view/screen/auth/sign_up/success_signup.dart';
-import 'package:hamzawy_store/view/screen/homepage.dart';
 import 'package:hamzawy_store/view/screen/homescreen.dart';
 import 'package:hamzawy_store/view/screen/introduction/language.dart';
 import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';

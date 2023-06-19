@@ -4,7 +4,7 @@ import 'package:hamzawy_store/view/screen/homepage.dart';
 
 abstract class HomeScreenController extends GetxController {
 
-  changePage(int currentpage);
+  changePage(int i);
 
 
 
@@ -17,7 +17,7 @@ class HomeScreenControllerImp extends HomeScreenController{
   int currentpage = 0;
 
   List<Widget> listPage = [
-  const HomeBody.HomePage(),
+  const HomeBody(),
     Center(child: Text("Hello page 2"),),
     Center(child: Text("Hello page 3"),),
     Center(child: Text("Hello page 4"),),
@@ -44,7 +44,6 @@ class HomeScreenControllerImp extends HomeScreenController{
 
     currentpage = i;
     update();
-    print("current int is $currentpage");
 
   }
 }

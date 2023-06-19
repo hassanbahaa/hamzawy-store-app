@@ -26,21 +26,21 @@ class CustomNavBarItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(Dimensions.width20)
       ),
       child: MaterialButton(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         onPressed: onPressed,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
               icon,
-              color: active == true ? AppColor.primaryColor : AppColor.gery,
+              color: active == true ? AppColor.primaryColor : Colors.black45,
               size: Dimensions.fontSize20 + 2,
             ),
             Text(
               text,
               style: TextStyle(
                 fontSize: Dimensions.fontSize10,
-                color: active == true ? AppColor.primaryColor : AppColor.gery,
+                color: active == true ? AppColor.primaryColor : Colors.black45,
               ),
             )
           ],
