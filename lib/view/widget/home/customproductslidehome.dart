@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/home_controller.dart';
+import 'package:hamzawy_store/core/constant/color.dart';
 
 import '../../../core/constant/dimentions.dart';
 import '../../../linkapi.dart';
@@ -11,51 +13,89 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
   @override
   Widget build(BuildContext context) {
     return   Container(
-      height: Dimensions.height120-10,
+      height: Dimensions.height180,
       child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
           itemCount: controller.items.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, i) {
-            return Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  height: Dimensions.height100,
-                  width: Dimensions.height150,
-                  decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.2),
-                      borderRadius:
-                      BorderRadius.circular(20)),
-                ),
-                Container(
-                  height: Dimensions.height100,
-                  width: Dimensions.height150,
-                  margin: EdgeInsets.only(right: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Image.network(
+            return Container(
+              height: Dimensions.height180,
+              width:  Dimensions.width120,
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.only(right: 10),
+              decoration: BoxDecoration(
+                color: AppColor.gery3,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CachedNetworkImage(
+                    imageUrl:
                     "${AppLink.imagesitems}/${controller.items[i]['items_image']}",
                     height: Dimensions.height100,
                     width: Dimensions.height150,
                     fit: BoxFit.contain,
                   ),
-                ),
+                  Container(
+                    height: Dimensions.height60,
+                    padding: EdgeInsets.symmetric(horizontal: 7,vertical: 7),
+                    decoration: BoxDecoration(
+                      color: AppColor.white,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       Text(
+                         "${controller.items[i]["items_name"]}",
+                         style: TextStyle(
+                             fontSize: Dimensions.fontSize12,
+                             fontWeight: FontWeight.w600,
+                             overflow: TextOverflow.ellipsis
+                             ,
+                             color: AppColor.primaryDarkColor),
+                       ),
+                       Container(
+                         // height: Dimensions.height35,
+                         padding: EdgeInsets.zero,
+                         child: Row(
+                           crossAxisAlignment: CrossAxisAlignment.end,
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             Text(
+                               "${controller.items[i]["items_price"]}",
+                               style: TextStyle(
+                                   fontSize: Dimensions.fontSize14,
+                                   fontWeight: FontWeight.w600,
+                                   overflow: TextOverflow.ellipsis
+                                   ,
+                                   color: AppColor.primaryDarkColor),
+                             ),
+                             InkWell(
+                               child: Icon(Icons.arrow_forward_rounded,size: 16,),
+                             ),
+                           ],
+                         ),
+                       )
+                     ],
+                    ),
+                  ),
 
-                Positioned(
-                  width: Dimensions.height140,
-                    left: 10,
-                    child: Text(
-                      "${controller.items[i]["items_name"]}",
-                      style: TextStyle(
-                          fontSize: Dimensions.fontSize14,
-                          fontWeight: FontWeight.w500,
-                          overflow: TextOverflow.ellipsis
-                          ,
-                          color: Colors.white),
-                    ))
-              ],
+
+                ],
+              ),
             );
           }),
     );
   }
 }
+
+
+/*
+
+
+
+ */

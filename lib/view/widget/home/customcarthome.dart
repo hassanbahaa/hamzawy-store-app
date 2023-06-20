@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constant/color.dart';
@@ -67,68 +68,13 @@ class CustomCartHome extends StatelessWidget {
                 ? const Text("")
                 : ClipRRect(
                     borderRadius: BorderRadius.circular(Dimensions.height60),
-                    child: Image.network(
-                    image,
-                    fit: BoxFit.cover,
-                  )),
+                    child: CachedNetworkImage(
+                      imageUrl: image,
+                      fit: BoxFit.cover,
+                    )),
           ),
         ],
       ),
     );
   }
 }
-
-/*
-
-القديمة
-
-Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        // color: AppColor.primaryColor,
-      ),
-      // width: Dimensions.screenWidth-60,
-      margin: const EdgeInsets.symmetric(vertical: 15),
-      child: Stack(
-        children: [
-          Container(
-            alignment: Alignment.center,
-            height: Dimensions.height120,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: AppColor.secondaryColor,
-            ),
-            child: ListTile(
-              title: Text(
-                title,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Dimensions.fontSize20),
-              ),
-              subtitle: Text(
-                subtitle,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: Dimensions.fontSize18),
-              ),
-            ),
-          ),
-          Positioned(
-            right: 10,
-            top: 5,
-            child: Container(
-              height: Dimensions.height120 - 10,
-              width: Dimensions.height120 - 10,
-              decoration: BoxDecoration(
-                // color: AppColor.secondaryColor,
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(
-                      Dimensions.height120 / 2)),
-            ),
-          )
-        ],
-      ),
-    )
-
-
-* */

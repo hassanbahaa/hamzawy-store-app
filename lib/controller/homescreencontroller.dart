@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hamzawy_store/view/screen/homepage.dart';
+import '../view/screen/home/homepage.dart';
 
 abstract class HomeScreenController extends GetxController {
 

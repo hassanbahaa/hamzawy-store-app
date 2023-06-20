@@ -33,14 +33,14 @@ class CustomNavBarItem extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: active == true ? AppColor.primaryColor : Colors.black45,
+              color: active == true ? AppColor.primaryColor : AppColor.gery2,
               size: Dimensions.fontSize20 + 2,
             ),
             Text(
               text,
               style: TextStyle(
                 fontSize: Dimensions.fontSize10,
-                color: active == true ? AppColor.primaryColor : Colors.black45,
+                color: active == true ? AppColor.primaryColor : AppColor.gery2,
               ),
             )
           ],

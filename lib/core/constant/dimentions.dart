@@ -46,6 +46,8 @@ class Dimensions{
   static double height50        =  50.h;
   static double height45        =  45.h;
   static double height40        =  40.h;
+  static double height35        =  35.h;
+  static double height30        =  30.h;
   static double height25        =  25.h;
   static double height20        =  20.h;
   static double height15        =  15.h;

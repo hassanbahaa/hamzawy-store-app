@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/homescreencontroller.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
-import '../widget/home/custombottomnavbarHome.dart';
+import '../../widget/home/custombottomnavbarHome.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

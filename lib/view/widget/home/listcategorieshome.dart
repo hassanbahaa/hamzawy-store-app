@@ -20,6 +20,7 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
       height: Dimensions.height90,
       // color: Colors.red,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
         separatorBuilder: (context, index) {
           return const SizedBox(
             width: 10,
@@ -28,35 +29,41 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
         itemCount: controller.categories.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, int index) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 10, vertical: 5),
-                height: Dimensions.height65,
-                width: Dimensions.height65,
-                decoration: BoxDecoration(
-                    color: AppColor.secondaryLightColor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: SvgPicture.network(
-                  "${AppLink.imagescategories}/${controller.categories[index]['categories_image']}",
-                  width: Dimensions.height65,
+          return InkWell(
+            onTap: (){
+              // print("selected category ID isss : ${controller.categories[index]['categories_id'].runtimeType} and $index");
+              controller.goToItems(controller.categories, index);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10, vertical: 5),
                   height: Dimensions.height65,
-                  placeholderBuilder:
-                      (BuildContext context) => Container(
+                  width: Dimensions.height65,
+                  decoration: BoxDecoration(
+                      color: AppColor.secondaryLightColor,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: SvgPicture.network(
+                    "${AppLink.imagescategories}/${controller.categories[index]['categories_image']}",
                     width: Dimensions.height65,
                     height: Dimensions.height65,
+                    placeholderBuilder:
+                        (BuildContext context) => Container(
+                      width: Dimensions.height65,
+                      height: Dimensions.height65,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                controller.categories[index]
-                ['categories_name'],
-                style: TextStyle(
-                    fontSize: Dimensions.fontSize12),
-              )
-            ],
+                Text(
+                  controller.categories[index]
+                  ['categories_name'],
+                  style: TextStyle(
+                      fontSize: Dimensions.fontSize12),
+                )
+              ],
+            ),
           );
         },
       ),

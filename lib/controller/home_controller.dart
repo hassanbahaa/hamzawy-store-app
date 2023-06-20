@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hamzawy_store/core/class/statusrequest.dart';
+import 'package:hamzawy_store/core/constant/routes_names.dart';
 import 'package:hamzawy_store/core/services/services.dart';
 import 'package:hamzawy_store/data/data_source/remote/home_data.dart';
 
@@ -9,6 +10,7 @@ abstract class HomeController extends GetxController {
   initialData();
 
   getData();
+  goToItems(List categories ,int selectedCat);
 
   HomeData homeData = HomeData(Get.find());
 
@@ -63,5 +65,15 @@ class HomeControllerImp extends HomeController {
       }
     }
     update();
+  }
+
+  @override
+  goToItems( categories , selectedCat) {
+    Get.toNamed(AppRoute.items,arguments:{
+      "categories":categories,
+      "selectedCat":selectedCat,
+    } );
+    // print("selected category ID is : $selectedCat");
+
   }
 }

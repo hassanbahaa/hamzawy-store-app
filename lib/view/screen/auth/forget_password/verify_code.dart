@@ -74,7 +74,7 @@ class ForgetVerifyCode extends StatelessWidget {
                 ),
                 SizedBox(height:  Dimensions.height20,),
                 controller.statusRequest == StatusRequest.loading ?
-                Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
+                const Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
                     : SizedBox(height: 1,),
 
                 controller.wrongcode ? Center(child: Text("wrong code, please try again",style: TextStyle(color: Colors.red),)): SizedBox(height: 1,),

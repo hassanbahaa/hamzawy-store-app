@@ -5,7 +5,7 @@ import 'package:hamzawy_store/core/class/handle_data_view.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
 import 'package:hamzawy_store/core/constant/dimentions.dart';
 import 'package:hamzawy_store/linkapi.dart';
-import 'package:hamzawy_store/view/widget/home/customappbar.dart';
+import 'package:hamzawy_store/view/widget/customappbar.dart';
 import 'package:hamzawy_store/view/widget/home/customcarthome.dart';
 import 'package:hamzawy_store/view/widget/home/customproductslidehome.dart';
 import 'package:hamzawy_store/view/widget/home/listcategorieshome.dart';
@@ -26,6 +26,7 @@ class HomeBody extends StatelessWidget {
             widget: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: ListView(
+                  physics: const BouncingScrollPhysics(),
                   children: [
                     const CustomAppBar(titleAppBar: "Search"),
                     CustomCartHome(
@@ -55,7 +56,9 @@ class HomeBody extends StatelessWidget {
                       height: 10,
                     ),
                     const CustomProductSlide(),
-
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Text(
                       "Top Sales",
                       style: TextStyle(

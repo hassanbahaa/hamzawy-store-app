@@ -117,8 +117,8 @@ class Login extends StatelessWidget {
                     ),
                     SizedBox(height:  Dimensions.height5,),
                     controller.statusRequest == StatusRequest.loading ?
-                    Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
-                        : SizedBox(height: 5,),
+                    const Center(child: LinearProgressIndicator(backgroundColor: AppColor.primaryColor,color: Colors.white),)
+                        : const SizedBox(height: 5,),
                     // sign in button
                     Container(
                       child: AuthCustomButton(
