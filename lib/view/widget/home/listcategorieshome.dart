@@ -31,8 +31,8 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
         itemBuilder: (context, int index) {
           return InkWell(
             onTap: (){
-              // print("selected category ID isss : ${controller.categories[index]['categories_id'].runtimeType} and $index");
-              controller.goToItems(controller.categories, index);
+              print("selected category ID isss : ${controller.categories[index]['categories_id']} ");
+              controller.goToItems(controller.categories, index,controller.categories[index]['categories_id']);
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -29,7 +29,7 @@ class ListCategoriesItems extends GetView<ItemsControllerImp> {
         itemBuilder: (context, int index) {
           return InkWell(
             onTap: () {
-              controller.changeCat(index);
+              controller.changeCat(index,controller.categories[index]['categories_id']);
               // print("$index  and ${controller.selectedCat}");
             },
             child: GetBuilder<ItemsControllerImp>(builder: (controller){

@@ -10,7 +10,7 @@ abstract class HomeController extends GetxController {
   initialData();
 
   getData();
-  goToItems(List categories ,int selectedCat);
+  goToItems(List categories ,int selectedCat,String id);
 
   HomeData homeData = HomeData(Get.find());
 
@@ -68,10 +68,11 @@ class HomeControllerImp extends HomeController {
   }
 
   @override
-  goToItems( categories , selectedCat) {
+  goToItems( categories , selectedCat,catID) {
     Get.toNamed(AppRoute.items,arguments:{
       "categories":categories,
       "selectedCat":selectedCat,
+      "catID":catID
     } );
     // print("selected category ID is : $selectedCat");
 
