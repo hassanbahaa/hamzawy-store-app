@@ -4,6 +4,7 @@ import 'package:hamzawy_store/controller/home_controller.dart';
 import 'package:hamzawy_store/core/class/handle_data_view.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
 import 'package:hamzawy_store/core/constant/dimentions.dart';
+import 'package:hamzawy_store/core/functions/transalate_database.dart';
 import 'package:hamzawy_store/linkapi.dart';
 import 'package:hamzawy_store/view/widget/customappbar.dart';
 import 'package:hamzawy_store/view/widget/home/customcarthome.dart';
@@ -28,14 +29,24 @@ class HomeBody extends StatelessWidget {
                 child: ListView(
                   physics: const BouncingScrollPhysics(),
                   children: [
-                    const CustomAppBar(titleAppBar: "Search"),
+                    CustomAppBar(titleAppBar: "Search".tr),
                     CustomCartHome(
-                      title: controller.homeCart.isEmpty ? "Black Friday Off" :  controller.homeCart[0]["cart_title"],
-                      subtitle: controller.homeCart.isEmpty ? "Up to 50% Discount" :  controller.homeCart[0]["cart_subtitle"],
-                      image:controller.homeCart.isEmpty ? "" :  "${AppLink.imageshome}/${controller.homeCart[0]["cart_image"]}",
+                      title: controller.homeCart.isEmpty
+                          ? "Black Friday Off"
+                          : translateDatabase(
+                              controller.homeCart[0]["cart_title_ar"],
+                              controller.homeCart[0]["cart_title"]),
+                      subtitle: controller.homeCart.isEmpty
+                          ? "Up to 50% Discount"
+                          : translateDatabase(
+                              controller.homeCart[0]["cart_subtitle_ar"],
+                              controller.homeCart[0]["cart_subtitle"]),
+                      image: controller.homeCart.isEmpty
+                          ? ""
+                          : "${AppLink.imageshome}/${controller.homeCart[0]["cart_image"]}",
                     ),
                     Text(
-                      "Categories",
+                      "Categories".tr,
                       style: TextStyle(
                           fontSize: Dimensions.fontSize14,
                           fontWeight: FontWeight.w500,
@@ -46,7 +57,7 @@ class HomeBody extends StatelessWidget {
                       height: 15,
                     ),
                     Text(
-                      "Products for you",
+                      "Products for you".tr,
                       style: TextStyle(
                           fontSize: Dimensions.fontSize14,
                           fontWeight: FontWeight.w500,
@@ -60,15 +71,13 @@ class HomeBody extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "Top Sales",
+                      "Top Sales".tr,
                       style: TextStyle(
                           fontSize: Dimensions.fontSize14,
                           fontWeight: FontWeight.w500,
                           color: AppColor.primaryColor),
                     ),
-                    const SizedBox(
-                      height: 10
-                    ),
+                    const SizedBox(height: 10),
                     const CustomProductSlide(),
                     // Products container
                   ],

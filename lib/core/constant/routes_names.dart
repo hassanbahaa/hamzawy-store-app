@@ -15,5 +15,6 @@ class AppRoute{
   static const String onBoarding                  = '/onboarding' ;
   static const String home                        = '/home' ;
   static const String items                        = '/items' ;
+  static const String productdetails                        = '/productdetails' ;
 
 }

@@ -88,8 +88,12 @@ class MyTranslation extends Translations{
       // OnBoarding End
 
 
+// Home screen
 
-
+      "Products for you":"رشحنا لك",
+      "Categories":"الأقسام",
+      "Top Sales":"الأكثر مبيعا",
+      "Search":"بحث",
 
 
 
@@ -183,6 +187,15 @@ class MyTranslation extends Translations{
       "onboarding3body":"best tracker has been used for  track your order. you'll know where  your product is at the moment.",
       "onboarding4body":"reliable and fast delivery. we  deliver your product the fastest  way possible",
       ///////////////////////////
+
+      // Home screen
+
+      "Products for you":"Products for you",
+      "Categories":"Categories",
+      "Top Sales":"Top Sales",
+      "Serch":"Search",
+
+
 
     }
   };

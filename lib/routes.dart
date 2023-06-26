@@ -13,10 +13,11 @@ import 'package:hamzawy_store/view/screen/home/homescreen.dart';
 import 'package:hamzawy_store/view/screen/introduction/language.dart';
 import 'package:hamzawy_store/view/screen/introduction/onboarding.dart';
 import 'package:hamzawy_store/view/screen/items/items.dart';
+import 'package:hamzawy_store/view/screen/productdetails.dart';
 
 
 List<GetPage<dynamic>>? routes = [
-// GetPage(name: "/",                            page: () => const TestView()),
+// GetPage(name: "/",                            page: () => const ProductDetails()),
   GetPage(name: "/",                                page: () => const Language() , middlewares: [MyMiddleWare()]),
   GetPage(name: AppRoute.home,                      page: () => const HomeScreen()),
   GetPage(name: AppRoute.items,                     page: () => const Items()),
@@ -29,6 +30,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.signUpCheckCode,           page: () => const SignUpVerifyCode()),
   GetPage(name: AppRoute.successSignup,             page: () => const SuccessSignUp()),
   GetPage(name: AppRoute.onBoarding,                page: () => const OnBoarding()),
+  GetPage(name: AppRoute.productdetails,                page: () => ProductDetails()),
 
 ];
 

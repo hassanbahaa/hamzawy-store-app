@@ -22,6 +22,7 @@ class CustomAppBar extends StatelessWidget {
                     border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(20)),
+                    contentPadding: EdgeInsets.symmetric(vertical: 5),
                     filled: true,
                     fillColor: Colors.grey[200]),
               )),

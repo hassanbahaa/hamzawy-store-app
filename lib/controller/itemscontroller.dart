@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/data/data_source/remote/items_data.dart';
+import 'package:hamzawy_store/data/model/items_model.dart';
 
 import '../core/class/statusrequest.dart';
+import '../core/constant/color.dart';
 import '../core/functions/handling_data.dart';
 
 abstract class ItemsController extends GetxController {
@@ -9,6 +13,7 @@ abstract class ItemsController extends GetxController {
   initialData();
   changeCat(int val,String categories_id);
   getItems(String catID);
+  goToProductDetails(ItemsModel itemsModel);
 
 }
 
@@ -17,7 +22,7 @@ class ItemsControllerImp extends ItemsController{
   ItemsData itemsData = ItemsData(Get.find());
   StatusRequest statusRequest = StatusRequest.init;
   List categories = [];
- String? catID;
+  String? catID;
   List data = [];
 
   int? selectedCat ;
@@ -25,6 +30,7 @@ class ItemsControllerImp extends ItemsController{
 
   @override
   void onInit() {
+
     initialData();
     super.onInit();
   }
@@ -62,6 +68,13 @@ class ItemsControllerImp extends ItemsController{
     }
     update();
 
+  }
+
+  @override
+  goToProductDetails(itemsmodel) {
+    Get.toNamed("productdetails",arguments: {
+      "itemsmodel": itemsmodel
+    });
   }
 
 

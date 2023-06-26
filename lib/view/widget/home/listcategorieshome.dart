@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/home_controller.dart';
+import 'package:hamzawy_store/core/functions/transalate_database.dart';
 
 import '../../../core/constant/color.dart';
 import '../../../core/constant/dimentions.dart';
@@ -57,8 +58,7 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
                   ),
                 ),
                 Text(
-                  controller.categories[index]
-                  ['categories_name'],
+                  translateDatabase(controller.categories[index]['categories_name_ar'], controller.categories[index]['categories_name']),
                   style: TextStyle(
                       fontSize: Dimensions.fontSize12),
                 )

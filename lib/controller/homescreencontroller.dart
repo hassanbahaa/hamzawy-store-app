@@ -18,9 +18,9 @@ class HomeScreenControllerImp extends HomeScreenController{
 
   List<Widget> listPage = [
   const HomeBody(),
-    Center(child: Text("Hello page 2"),),
-    Center(child: Text("Hello page 3"),),
-    Center(child: Text("Hello page 4"),),
+    const Center(child: Text("Hello page 2"),),
+    const Center(child: Text("Hello page 3"),),
+    const Center(child: Text("Hello page 4"),),
   ] ;
 
   List listnames = [

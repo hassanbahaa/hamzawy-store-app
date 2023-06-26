@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hamzawy_store/core/class/handle_data_view.dart';
@@ -17,6 +18,7 @@ class Items extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Get.put(ItemsControllerImp());
     return Scaffold(
       body: Container(
@@ -25,7 +27,7 @@ class Items extends StatelessWidget {
           return ListView(
             physics: BouncingScrollPhysics(),
             children: [
-              const CustomAppBar(titleAppBar: "Search"),
+              CustomAppBar(titleAppBar: "Search".tr),
               SizedBox(
                 height: 10,
               ),

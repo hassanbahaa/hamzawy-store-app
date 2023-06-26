@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/itemscontroller.dart';
+import 'package:hamzawy_store/core/functions/transalate_database.dart';
 
 import '../../../core/constant/color.dart';
 import '../../../core/constant/dimentions.dart';
@@ -39,8 +40,8 @@ class ListCategoriesItems extends GetView<ItemsControllerImp> {
                   Container(
                     padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    height: Dimensions.height65,
-                    width: Dimensions.height65,
+                    height: Dimensions.height60,
+                    width: Dimensions.height60,
                     decoration: BoxDecoration(
                         color:controller.selectedCat == index ? AppColor.primaryColor.withOpacity(0.7) : AppColor.secondaryLightColor,
                         // color:AppColor.secondaryLightColor,
@@ -59,7 +60,7 @@ class ListCategoriesItems extends GetView<ItemsControllerImp> {
                     ),
                   ),
                   Text(
-                    controller.categories[index]['categories_name'],
+                    translateDatabase(controller.categories[index]['categories_name_ar'], controller.categories[index]['categories_name']),
                     style: TextStyle(
                         fontSize: Dimensions.fontSize14,
                         fontWeight: FontWeight.w600,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hamzawy_store/controller/home_controller.dart';
 import 'package:hamzawy_store/core/constant/color.dart';
+import 'package:hamzawy_store/core/functions/transalate_database.dart';
 
 import '../../../core/constant/dimentions.dart';
 import '../../../linkapi.dart';
@@ -21,9 +22,9 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
           itemBuilder: (context, i) {
             return Container(
               height: Dimensions.height180,
-              width:  Dimensions.width120,
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(right: 10),
+              width:  Dimensions.width140,
+              padding: const EdgeInsets.all(5),
+              margin: const EdgeInsets.only(right: 10),
               decoration: BoxDecoration(
                 color: AppColor.gery3,
                 borderRadius: BorderRadius.circular(15)
@@ -40,7 +41,7 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
                   ),
                   Container(
                     height: Dimensions.height60,
-                    padding: EdgeInsets.symmetric(horizontal: 7,vertical: 7),
+                    padding: const EdgeInsets.symmetric(horizontal: 7,vertical: 5),
                     decoration: BoxDecoration(
                       color: AppColor.white,
                       borderRadius: BorderRadius.circular(10)
@@ -50,7 +51,7 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                      children: [
                        Text(
-                         "${controller.items[i]["items_name"]}",
+                         translateDatabase(controller.items[i]["items_name_ar"], controller.items[i]["items_name"]),
                          style: TextStyle(
                              fontSize: Dimensions.fontSize12,
                              fontWeight: FontWeight.w600,
@@ -74,7 +75,7 @@ class CustomProductSlide extends GetView<HomeControllerImp> {
                                    ,
                                    color: AppColor.primaryDarkColor),
                              ),
-                             InkWell(
+                             const InkWell(
                                child: Icon(Icons.arrow_forward_rounded,size: 16,),
                              ),
                            ],
